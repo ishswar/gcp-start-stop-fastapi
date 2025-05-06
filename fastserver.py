@@ -12,9 +12,9 @@ from datetime import datetime
 from contextlib import asynccontextmanager
 
 # Import our custom modules
-from vm_cache import VMCache
-from operation_logger import OperationLogger
-from vm_operations_handler import VMOperationsHandler
+from core.vm_cache import VMCache
+from core.operation_logger import OperationLogger
+from core.vm_operations_handler import VMOperationsHandler
 
 # Configure logging
 logging.basicConfig(

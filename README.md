@@ -534,6 +534,87 @@ Response:
 }
 ```
 
+# Sample test api output : 
+
+```
+% python test_api.py
+╭───────────────────────────────╮
+│ GCP VM Manager API Test Suite │
+╰─ Target: http://127.0.0.1:800─╯
+
+Checking state for start/stop test VM: guedfocce101
+Warning: VM guedfocce101 is not in TERMINATED state (current: RUNNING).
+Start test requires VM to be in TERMINATED state.
+Would you like to stop this VM now to continue with start testing? [y/n]: y
+VM guedfocce101 stopped successfully.
+VM is now in TERMINATED state. Start tests will proceed.
+
+Checking state for suspend/resume test VM: guwdfoczoom2g01
+
+Test Configuration:
+API URL: http://127.0.0.1:8000
+Start/Stop Tests: Enabled
+  - Start Test VM: guedfocce101 (State: TERMINATED)
+Suspend/Resume Tests: Enabled
+  - Resume Test VM: guwdfoczoom2g01 (State: SUSPENDED)
+Zone: Auto-detect
+
+⠋ Running API tests... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 0/72025-05-06 14:25:04,259 - api_tests - INFO - Testing health endpoint...
+Testing health endpoint...
+2025-05-06 14:25:04,265 - api_tests - INFO - health_check: [green]PASSED[/green] - Health check succeeded
+health_check: PASSED - Health check succeeded
+2025-05-06 14:25:04,266 - api_tests - INFO - Testing status operation on VM guedfocce101...
+Testing status operation on VM guedfocce101...
+⠼ Running API tests... ━━━━━╸━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1/72025-05-06 14:25:07,000 - api_tests - INFO - start_vm_initial_status: [green]PASSED[/green] - VM status check succeeded: TERMINATED
+start_vm_initial_status: PASSED - VM status check succeeded: TERMINATED
+2025-05-06 14:25:07,002 - api_tests - INFO - Testing start operation on VM guedfocce101...
+Testing start operation on VM guedfocce101...
+⠏ Running API tests... ━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2/72025-05-06 14:25:20,266 - api_tests - INFO - vm_start: [green]PASSED[/green] - VM start operation succeeded
+vm_start: PASSED - VM start operation succeeded
+2025-05-06 14:25:20,268 - api_tests - INFO - Testing status operation on VM guedfocce101...
+Testing status operation on VM guedfocce101...
+⠧ Running API tests... ━━━━━━━━━━━━━━━━━╺━━━━━━━━━━━━━━━━━━━━━━ 3/72025-05-06 14:25:22,524 - api_tests - INFO - start_vm_final_status: [green]PASSED[/green] - VM status check succeeded: RUNNING
+start_vm_final_status: PASSED - VM status check succeeded: RUNNING
+2025-05-06 14:25:22,525 - api_tests - INFO - Testing status operation on VM guwdfoczoom2g01...
+Testing status operation on VM guwdfoczoom2g01...
+⠼ Running API tests... ━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━━━━━━━ 4/72025-05-06 14:25:24,727 - api_tests - INFO - resume_vm_initial_status: [green]PASSED[/green] - VM status check succeeded: SUSPENDED
+resume_vm_initial_status: PASSED - VM status check succeeded: SUSPENDED
+2025-05-06 14:25:24,728 - api_tests - INFO - Testing resume operation on VM guwdfoczoom2g01...
+Testing resume operation on VM guwdfoczoom2g01...
+⠦ Running API tests... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━╸━━━━━━━━━━━ 5/72025-05-06 14:25:40,849 - api_tests - INFO - vm_resume: [green]PASSED[/green] - VM resume operation succeeded
+vm_resume: PASSED - VM resume operation succeeded
+2025-05-06 14:25:40,851 - api_tests - INFO - Testing status operation on VM guwdfoczoom2g01...
+Testing status operation on VM guwdfoczoom2g01...
+⠋ Running API tests... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╺━━━━━ 6/72025-05-06 14:25:43,514 - api_tests - INFO - resume_vm_final_status: [green]PASSED[/green] - VM status check succeeded: RUNNING
+resume_vm_final_status: PASSED - VM status check succeeded: RUNNING
+  Running API tests... ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7/7
+
+
+╭────── Summary ───────╮
+│ Test Summary         │
+│ Total Tests: 7       │
+│ Passed: 7            │
+│ Failed: 0            │
+│ Skipped: 0           │
+│ Success Rate: 100.0% │
+╰──────────────────────╯
+                                                       GCP VM Manager API Test Results                                                       
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Test                     ┃ Result    ┃ Message                               ┃ Details                                                    ┃
+┡━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ health_check             │ ✅ PASSED │ Health check succeeded                │ Server version: 2.0.0                                      │
+│ start_vm_initial_status  │ ✅ PASSED │ VM status check succeeded: TERMINATED │ Machine type: e2-standard-4, IP: 10.xxx.1.29               │
+│ vm_start                 │ ✅ PASSED │ VM start operation succeeded          │ VM guedfocce101 (guedfocce101) started successfully.       │
+│ start_vm_final_status    │ ✅ PASSED │ VM status check succeeded: RUNNING    │ Machine type: e2-standard-4, IP: 10.xxx.1.29               │
+│ resume_vm_initial_status │ ✅ PASSED │ VM status check succeeded: SUSPENDED  │ Machine type: e2-standard-8, IP: 10.xxx.56.9               │
+│ vm_resume                │ ✅ PASSED │ VM resume operation succeeded         │ VM guwdfoczoom2g01 (guwdfoczoom2g01) resumed successfully. │
+│ resume_vm_final_status   │ ✅ PASSED │ VM status check succeeded: RUNNING    │ Machine type: e2-standard-8, IP: 10.xxx.56.9               │
+└──────────────────────────┴───────────┴───────────────────────────────────────┴────────────────────────────────────────────────────────────┘
+
+Detailed report saved to: test_logs/vm_api_test_report_20250506_142257.txt
+CSV report saved to: test_logs/vm_api_test_report_20250506_142257.csv
+```
+
 ## Troubleshooting
 
 ### Common Issues
