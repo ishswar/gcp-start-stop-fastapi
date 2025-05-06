@@ -186,7 +186,7 @@ gunicorn -w 4 -k uvicorn.workers.UvicornWorker fastserver:app
 docker build -t gcp-vm-manager .
 docker run -p 8000:8000 --env-file .env gcp-vm-manager
 ```
-```
+
 
 # README Part 3: Module Breakdown
 
