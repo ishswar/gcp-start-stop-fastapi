@@ -59,11 +59,11 @@ Manages VM operations with the following parameters:
 
 #### Examples:
 ##### Get VM status with real-time updates  
-GET /gcp-action/?vmname=my-instance-name  
+`GET /gcp-action/?vmname=my-instance-name`
 #####  Start a VM with JSON response  
-GET /gcp-action/?vmname=my-instance-name&operation=start&format=json  
+`GET /gcp-action/?vmname=my-instance-name&operation=start&format=json`
 ##### Stop a VM in a specific zone  
-GET /gcp-action/?vmname=my-instance-name&operation=stop&zone=us-east4-a  
+`GET /gcp-action/?vmname=my-instance-name&operation=stop&zone=us-east4-a`
 
 
 ### Health Check: `/health`
