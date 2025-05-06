@@ -295,7 +295,6 @@ Key function:
 
 # README Part 4: Testing
 
-```markdown
 ## Testing
 
 The project includes a comprehensive test suite for API testing.
@@ -313,7 +312,7 @@ The project includes a comprehensive test suite for API testing.
 
 Create a `.env` file in the `tests` directory:
 
-```
+
 # API Test Configuration
 API_URL=http://127.0.0.1:8000
 
