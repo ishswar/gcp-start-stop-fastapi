@@ -125,26 +125,29 @@ In production environments like GCP Compute Engine or GKE, the service can use t
 
 Create a `.env` file in the root directory with the following variables:
 
-VMs allowed for restricted operations (stop, suspend)
+```
+# VMs allowed for restricted operations (stop, suspend)
 ALLOWED_VMS=vm1,vm2,vm3
-Operations that are restricted to allowed VMs list
+# Operations that are restricted to allowed VMs list
 RESTRICTED_OPERATIONS=stop,suspend
-Default zone (optional - will be used if no zone is provided and VM not found in cache)
+# Default zone (optional - will be used if no zone is provided and VM not found in cache)
 DEFAULT_ZONE=us-central1-a
-Cache settings
+# Cache settings
 CACHE_MAX_AGE_HOURS=1
+```
 
 ### Example .env file:
 
-Allow these VMs to be stopped or suspended
+```
+# Allow these VMs to be stopped or suspended
 ALLOWED_VMS=guedfocnlq03,guedfocdsml01,guedfocwqa82
-Restrict these operations to the whitelist
+# Restrict these operations to the whitelist
 RESTRICTED_OPERATIONS=stop,suspend
-Default zone if none specified
+# Default zone if none specified
 DEFAULT_ZONE=us-east4-a
-Cache refresh interval
+# Cache refresh interval
 CACHE_MAX_AGE_HOURS=1
-
+```
 
 ### VM Name Aliases
 
