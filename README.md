@@ -190,7 +190,7 @@ docker run -p 8000:8000 --env-file .env gcp-vm-manager
 
 # README Part 3: Module Breakdown
 
-```markdown
+
 ## Core Modules
 
 ### `fastserver.py` - Main Application Entry Point
@@ -291,7 +291,7 @@ Configures application logging with year/month directory structure.
 
 Key function:
 - `setup_logging()`: Sets up loggers with appropriate handlers
-```
+
 
 # README Part 4: Testing
 
