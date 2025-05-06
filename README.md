@@ -312,7 +312,7 @@ The project includes a comprehensive test suite for API testing.
 
 Create a `.env` file in the `tests` directory:
 
-
+```
 # API Test Configuration
 API_URL=http://127.0.0.1:8000
 
@@ -324,6 +324,7 @@ RESUME_TEST_VM=your-suspended-vm
 
 # Optional zone - will be auto-detected if not specified
 # TEST_ZONE=us-east4-a
+```
 
 ## Core Modules
 
