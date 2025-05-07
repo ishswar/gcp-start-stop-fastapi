@@ -15,7 +15,7 @@ import sys
 # Import our custom modules
 from core.vm_cache import VMCache
 from core.operation_logger import OperationLogger
-from core.vm_operations_handler import VMOperationsHandler
+from core.vm_operations_handler import VMOperationsHandler, ALLOWED_VMS
 
 # Configure logging
 logging.basicConfig(
