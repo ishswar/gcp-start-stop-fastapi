@@ -10,6 +10,7 @@ import logging
 import os
 from datetime import datetime
 from contextlib import asynccontextmanager
+import sys
 
 # Import our custom modules
 from core.vm_cache import VMCache
@@ -19,7 +20,11 @@ from core.vm_operations_handler import VMOperationsHandler
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
-    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s'
+    format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+    handlers=[
+        logging.StreamHandler(sys.stdout),
+        logging.FileHandler(os.path.join(os.path.dirname(os.path.abspath(__file__)), "logs", "fastapi.log"))
+    ]
 )
 logger = logging.getLogger(__name__)
 
